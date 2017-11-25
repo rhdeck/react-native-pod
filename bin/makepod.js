@@ -36,12 +36,11 @@ if(!fs.existsSync(iosPath + "/Podfile")) {
         process.exit(1); 
     }
     process.chdir(iosPath);
-    process.spawn
     const opts = {
         'encoding': 'utf8', 
         stdio: "inherit"
     }
-    process.spawnSync("pod", "init", opts);
+    spawnSync("pod", "init", opts);
     
     console.log("Podfile created in " + iosPath);
 } else {
