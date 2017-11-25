@@ -40,7 +40,7 @@ if(!fs.existsSync(iosPath + "/Podfile")) {
         'encoding': 'utf8', 
         stdio: "inherit"
     }
-    spawnSync("pod", "init", opts);
+    spawnSync("pod", ["init"], opts);
     
     console.log("Podfile created in " + iosPath);
 } else {
