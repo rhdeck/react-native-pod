@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "./bin/makepod.js",
     "preinstall": "./bin/preinstall.js"
   },
   "repository": {
@@ -21,7 +20,8 @@
   "rnpm": {
     "plugin": "rnplugin",
     "commands": {
-      "postlink": "node node_modules/react-native-pod/bin/postlink.js"
+      "postlink":
+        "node node_modules/react-native-pod/bin/makepod.js ; node node_modules/react-native-pod/bin/postlink.js"
     }
   }
 }
