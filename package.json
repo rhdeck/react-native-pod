@@ -20,8 +20,8 @@
   "rnpm": {
     "plugin": "rnplugin",
     "commands": {
-      "postlink":
-        "node node_modules/react-native-pod/bin/makepod.js ; node node_modules/react-native-pod/bin/postlink.js"
+      "prelink": "node node_modules/react-native-pod/bin/makepod.js",
+      "postlink": "node node_modules/react-native-pod/bin/postlink.js"
     }
   }
 }
