@@ -1,7 +1,29 @@
 module.exports = [
-    {
-        "name": 'installpods',
-        "func": require("./installpods.js"),
-        "description": "Install all pods specified in the podfile. (Happens automatically at react-native link)"
-    }
-]
+  {
+    name: "addpod [pod]",
+    description: "Add specified pod",
+    options: [
+      {
+        command: "--podversion [version]",
+        description: "version directive"
+      },
+      {
+        command: "--podgit [giturl]",
+        description: "Git (usually github) source URL"
+      }
+    ],
+    func: require("../lib/addpod.js")
+  },
+  {
+    name: "removepod [pod]",
+    description: "Remove specified pod",
+    func: require("../lib/removepod.js")
+  },
+
+  {
+    name: "installpods",
+    func: require("./installpods.js"),
+    description:
+      "Install all pods specified in the podfile. (Happens automatically at react-native link)"
+  }
+];
