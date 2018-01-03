@@ -17,7 +17,7 @@ if (!iosPath || !iosPath.length || !fs.existsSync(iosPath)) {
     process.exit();
   }
   var thisPath = path.dirname(thisPath); // parent
-  var iosPath = thisPath + "/ios";
+  var iosPath = path.resolve(thisPath, "ios");
 } else {
   iosPath = fs.realpathSync(iosPath);
 }
@@ -33,13 +33,12 @@ if (xpdir.length === 0) {
 }
 const podPath = iosPath + "/Podfile";
 if (!fs.existsSync(podPath)) {
-  let filename = xpdir + "/project.pbxproj";
+  let filename = path.resolve(xpdir, "project.pbxproj");
   if (!fs.existsSync(filename)) {
     console.log("COuld not find pbxproj file:", filename);
     process.exit();
   }
   var proj = pbxproj.project(filename);
-  console.log("Hello");
   var targets = [];
   proj.parse(function(err) {
     const nts = proj.pbxNativeTargetSection();
