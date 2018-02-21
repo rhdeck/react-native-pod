@@ -25,5 +25,11 @@ module.exports = [
     func: require("./installpods.js"),
     description:
       "Install all pods specified in the podfile. (Happens automatically at react-native link)"
+  },
+  {
+    name: "fixpods",
+    func: require("../lib/fixPods"),
+    description:
+      "Disable bitcode build in pod, can be important for swift-based projects"
   }
 ];
