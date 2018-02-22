@@ -10,22 +10,25 @@ const opts = {
   encoding: "utf8",
   stdio: "inherit"
 };
-var doFix = false;
+var isSwift = false;
+var needsSwiftFix = false;
 dependencies.map(dependency => {
   const package = require(path.resolve(nodepath, dependency, "package.json"));
   registerPodsFromPackage(package);
-  if (package.isSwift) doFix = true;
+  if (package.isSwift) isSwift = true;
+  if (package.needsSwiftFix) needsSwiftFix = true;
 });
 registerPodsFromPackage(package);
-if (package.isSwift) doFix = true;
+if (package.isSwift) isSwift = true;
+if (package.needsSwiftFix) needsSwiftFix = true;
 //Now that all my pods are here, let's run a pod install
+const doFix = isSwift && needsSwiftFix;
 const mydir = process.cwd();
 process.chdir("./ios");
 spawnSync("pod", ["install"], opts);
 console.log("Do I fix pods?");
 if (doFix) {
   console.log("Yes I do!");
-
   const fixPods = require("../lib/fixPods");
   process.chdir(mydir);
   fixPods();
