@@ -13,6 +13,7 @@
   "author": "Ray Deck",
   "license": "MIT",
   "dependencies": {
+    "commander": "^2.14.1",
     "glob": "^7.1.2",
     "xcode": "rhdeck/cordova-node-xcode"
   },
@@ -22,5 +23,6 @@
       "prelink": "node node_modules/react-native-pod/bin/makepod.js",
       "postlink": "node node_modules/react-native-pod/bin/postlink.js"
     }
-  }
+  },
+  "bin": { "react-native-pod": "./bin/cli.js" }
 }
