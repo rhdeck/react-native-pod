@@ -1,6 +1,6 @@
 {
   "name": "react-native-pod",
-  "version": "1.9.0",
+  "version": "1.10.0",
   "description": "Automatically generate podfile for React Native",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -24,5 +24,7 @@
       "postlink": "node node_modules/react-native-pod/bin/postlink.js"
     }
   },
-  "bin": { "react-native-pod": "./bin/cli.js" }
+  "bin": {
+    "react-native-pod": "./bin/cli.js"
+  }
 }
