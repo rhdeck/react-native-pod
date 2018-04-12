@@ -26,9 +26,7 @@ const doFix = isSwift && needsSwiftFix;
 const mydir = process.cwd();
 process.chdir("./ios");
 spawnSync("pod", ["install"], opts);
-console.log("Do I fix pods?");
 if (doFix) {
-  console.log("Yes I do!");
   const fixPods = require("../lib/fixPods");
   process.chdir(mydir);
   fixPods();
