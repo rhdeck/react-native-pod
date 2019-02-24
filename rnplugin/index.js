@@ -12,12 +12,12 @@ module.exports = [
         description: "Git (usually github) source URL"
       }
     ],
-    func: require("../lib/addpod.js")
+    func: require("../lib/addPod.js")
   },
   {
     name: "removepod [pod]",
     description: "Remove specified pod",
-    func: require("../lib/removepod.js")
+    func: require("../lib/removePod.js")
   },
 
   {
