@@ -10,6 +10,10 @@ module.exports = [
       {
         command: "--podgit [giturl]",
         description: "Git (usually github) source URL"
+      },
+      {
+        command: "--podspec <specurl>",
+        description: "Podspec for full path/url pointer"
       }
     ],
     func: require("../lib/addPod.js")
