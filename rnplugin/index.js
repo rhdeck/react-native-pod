@@ -12,7 +12,11 @@ module.exports = [
         description: "Git (usually github) source URL"
       },
       {
-        command: "--podspec <specurl>",
+        command: "--podgitoption [gitption]",
+        description: "Specify the branch, commit or tag like 'branch=branch_name'"
+      },
+      {
+        command: "--podspec [specurl]",
         description: "Podspec for full path/url pointer"
       }
     ],

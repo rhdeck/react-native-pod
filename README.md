@@ -28,10 +28,10 @@ or
 react-native addpod [pod] --podversion [version]
 ```
 
-or
+or (you can use only one branch/commit/tag option)
 
 ```
-react-native addpod [pod] --podgit[giturl]
+react-native addpod [pod] --podgit[giturl] [--podgitoption "branch=branch_name" "commit=sha" "tag=tag_name"]
 ```
 
 Note that adding a pod puts the reference in your package.json. This gives the hint to react-native link to add it to your Podfile.
